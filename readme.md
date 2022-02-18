@@ -10,11 +10,16 @@
 
 3. Se os passos anteriores obteverem sucesso é só começar a implementar conforme demanda.
 
+4. Adicionado imagem do Mysql ao repositorio:
+-  > docker-compose -f compose-mysql.yml up
 ## Documentação - links uteis.
 
 - https://hub.docker.com/_/postgres
 - https://docs.docker.com/engine/reference/commandline/image_ls/
 - https://docs.docker.com/engine/reference/run/
+- https://stack.desenvolvedor.expert/appendix/docker/basecode.html
+- https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html#application-properties.data.spring.jpa.database-platform
+-https://mysqlconnector.net/connection-options/
 
 ## Leitura
 
@@ -23,3 +28,8 @@
 ## Música para descontrair :D
 
 - https://www.youtube.com/watch?v=zpzoG5KGaHg
+
+## Extensão VSCode
+
+- Extension Pack for Java
+  v0.21.0

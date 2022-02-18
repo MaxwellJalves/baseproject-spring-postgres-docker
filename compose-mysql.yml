@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  bd:
+    image: mysql
+    command: '--default-authentication-plugin=mysql_native_password'
+    environment:
+      MYSQL_DATABASE: 'development'
+      MYSQL_USER: 'development'
+      MYSQL_ROOT_PASSWORD: 'development'
+    ports:
+      - "3306:3306"
+    volumes:
+      - "./mysql/data:/var/etc/mysql/data"
