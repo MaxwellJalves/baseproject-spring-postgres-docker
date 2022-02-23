@@ -28,8 +28,8 @@ public class PublicacaoController {
 
     @PostMapping
     public ResponseEntity<Publicacao> publicar(@RequestBody Publicacao publicacao) throws URISyntaxException {
-        var services = publicacaoServices.save(publicacao);
-        URI location = URI.create(String.format("/api/publicacoes/%s", services.getId()));
+        Publicacao services = publicacaoServices.save(publicacao);
+        URI location = URI.create(String.format("/api/publicacoes/%s", services));
         return ResponseEntity.created(location).body(services);
     }
 

@@ -20,7 +20,8 @@
 - https://stack.desenvolvedor.expert/appendix/docker/basecode.html
 - https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html#application-properties.data.spring.jpa.database-platform
 -https://mysqlconnector.net/connection-options/
-
+>Referencia XSD pom.xml
+-https://maven.apache.org/ref/2.2.1/maven-model/maven.html#class_build
 ## Leitura
 
 - https://medium.com/equals-lab/15-boas-pr%C3%A1ticas-para-desenvolvimento-de-aplica%C3%A7%C3%B5es-com-spring-boot-953e0ff2e24f
