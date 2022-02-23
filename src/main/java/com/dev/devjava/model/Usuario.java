@@ -2,25 +2,25 @@ package com.dev.devjava.model;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.UUID;
 
 @Data
-@Builder
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Entity
-@EqualsAndHashCode(callSuper = false)
+@EqualsAndHashCode
+@Builder
 public class Usuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id;
+    private UUID uuid;
 
+    @Column(name = "nome")
     private String nome;
 
-}
+    @Column(name = "apelido" , length = 50  )
+    private String apelido;
 
+}

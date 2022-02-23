@@ -1,0 +1,112 @@
+
+Processando Primeiro Registro 
+
+9eac87b4-93a6-402d-98c0-28c89540830b
+2022-02-21 19:56:03.59
+
+===Processamento Finalizado==== 
+
+
+Processando Primeiro Registro 
+
+40537afa-8cac-4d78-9152-6e444c740b12
+2022-02-21 19:56:14.402
+
+===Processamento Finalizado==== 
+
+
+Processando Primeiro Registro 
+
+d06324b9-bfbd-409c-9e27-e876a9ed85c8
+2022-02-21 20:12:39.144
+
+===Processamento Finalizado==== 
+
+
+Processando Primeiro Registro 
+
+72220bfb-8d17-4bf1-87df-327d116f7f02
+2022-02-21 20:15:15.478
+
+===Processamento Finalizado==== 
+
+
+Processando Primeiro Registro 
+
+d0f57699-4b33-4561-aa05-0c5e7e877c92
+2022-02-22 23:46:14.131
+
+===Processamento Finalizado==== 
+
+
+Processando Primeiro Registro 
+
+d7e51952-18e9-47e6-9af3-0dbed77a52c9
+2022-02-22 23:51:13.985
+
+===Processamento Finalizado==== 
+
+
+Processando Primeiro Registro 
+
+a94a2d29-9712-4796-89bf-c3630268a21e
+2022-02-22 23:52:31.339
+
+===Processamento Finalizado==== 
+
+
+Processando Primeiro Registro 
+
+bf67dacc-731c-4985-8773-8d39eb2d50e2
+2022-02-22 23:55:29.247
+
+===Processamento Finalizado==== 
+
+
+Processando Primeiro Registro 
+
+bb404f92-40cb-4505-aac7-d1b4e13437eb
+2022-02-22 23:55:47.612
+
+===Processamento Finalizado==== 
+
+
+Processando Primeiro Registro 
+
+0438cf81-5aaf-4db9-98c3-320c880de173
+2022-02-22 23:56:10.906
+
+===Processamento Finalizado==== 
+
+
+Processando Primeiro Registro 
+
+eb4c6a0a-8525-4333-af9f-42c8a828c254
+2022-02-22 23:56:22.352
+
+===Processamento Finalizado==== 
+
+
+Processando Primeiro Registro 
+
+d84314cd-0a5c-45dc-9200-076766710cb5
+2022-02-23 00:01:48.85
+
+===Processamento Finalizado==== 
+
+
+Processando Primeiro Registro 
+
+4261085b-e4f9-46e4-ae43-4ae1c748b886
+2022-02-23 00:01:49.376
+
+===Processamento Finalizado==== 
+
+
+Processando Primeiro Registro 
+
+8ba76e71-1b98-45c0-b410-789eeee81526
+2022-02-23 00:02:21.072
+
+===Processamento Finalizado==== 
+

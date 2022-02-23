@@ -33,3 +33,41 @@
 
 - Extension Pack for Java
   v0.21.0
+
+
+> Api de Teste
+> 
+```
+POST:
+/api/cadastro/usuario
+ {
+"nome": "JOAO GOMES",
+"apelido": "JOAO"
+}
+
+```
+
+```
+POST:  PUBLICAR
+/api/publicacoes
+
+{
+    "id": "1b657106-07d7-4871-9b99-addc1780674b",
+    "detalhes": "informar detalhes da publicacao",
+    "usuario": {
+        "uuid": "ee18bd11-fd81-4f67-8395-7d17ff92971b"
+    }
+}
+
+```
+
+```
+GET:  OBTER PUBLICACÕES
+/api/publicacoes
+```
+
+Pendencias:
+
+- [ ] Criar DTO para as Request e Response
+- [ ] Criar paginação das publicações;
+- [ ] Configurar o Cross para permitir comunicação com o NEXT

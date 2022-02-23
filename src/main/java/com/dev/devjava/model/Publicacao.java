@@ -7,24 +7,20 @@ import java.util.UUID;
 
 @Data
 @Builder
+@Entity
+@EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
-@EqualsAndHashCode(callSuper = false)
 public class Publicacao {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
-    @Column(name="arquivo")
-    private String arquivo;
 
     @ManyToOne
-    @JoinColumn(name = "usuario_id")
+    @JoinColumn(name = "usuario_uuid")
     private Usuario usuario;
 
-    @Column(name = "descricao")
-    private String descricao;
-
+    private  String detalhes;
 }
