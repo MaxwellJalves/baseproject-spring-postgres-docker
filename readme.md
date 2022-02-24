@@ -72,6 +72,7 @@ GET:  OBTER PUBLICACÕES
 
 Pendencias:
 
-- [ ] Criar DTO para as Request e Response
+- [x] Criar DTO para as Request e Response [USUARIO]
+- [x] Adicionar o MAPSTRUCT no projeto.
 - [ ] Criar paginação das publicações;
 - [ ] Configurar o Cross para permitir comunicação com o NEXT
