@@ -76,3 +76,22 @@ Pendencias:
 - [x] Adicionar o MAPSTRUCT no projeto.
 - [ ] Criar paginação das publicações;
 - [ ] Configurar o Cross para permitir comunicação com o NEXT
+
+
+>Exemplo de post de publicações
+
+POST: PUBLICACAO
+
+[
+    {
+    "id": "c7678848-bb2c-45e6-888b-5314c459733c",
+    "detalhes": "Publicacao Teste para obter o json",
+    "categoria": "TI",
+    "data": "2022-02-24T21:57:36.351+00:00",
+        "usuario": {
+        "id": "06e2cc06-2ec2-4a7f-a98c-1621f62b4acc",
+        "nome": "TESTE",
+        "apelido": "development"
+        }
+    }
+]

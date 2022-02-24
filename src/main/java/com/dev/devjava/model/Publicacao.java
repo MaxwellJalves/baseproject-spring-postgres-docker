@@ -19,7 +19,7 @@ public class Publicacao {
     private UUID id;
 
     private String detalhes;
-
+    @Enumerated(EnumType.STRING)
     private Categoria categoria;
 
     private Date data;
