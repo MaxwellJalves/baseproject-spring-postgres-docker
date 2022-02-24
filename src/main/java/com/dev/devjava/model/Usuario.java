@@ -3,6 +3,7 @@ package com.dev.devjava.model;
 import lombok.*;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.UUID;
 
 @Data
@@ -11,37 +12,18 @@ import java.util.UUID;
 @Builder
 @Entity
 @EqualsAndHashCode
-
 public class Usuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID uuid = UUID.randomUUID();
+    private UUID id;
 
-    @Column(name = "nome")
+    @Column(name = "nome", nullable = false)
+    @NotNull(message = "Nome do usuário não pode ser nulo")
     private String nome;
 
-    @Column(name = "apelido" , length = 50  )
+    @Column(name = "apelido", length = 50)
     private String apelido;
 
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public void setApelido(String apelido) {
-        this.apelido = apelido;
-    }
-
-    public UUID getUuid() {
-        return uuid;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public String getApelido() {
-        return apelido;
-    }
 }

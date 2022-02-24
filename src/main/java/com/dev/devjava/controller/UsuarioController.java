@@ -1,18 +1,19 @@
 package com.dev.devjava.controller;
 
-import com.dev.devjava.dto.UsuarioDtoRequest;
-import com.dev.devjava.dto.UsuarioMapper;
+
+import com.dev.devjava.dto.mappers.UsuarioMapper;
+import com.dev.devjava.dto.usuario.UsuarioRequestDTO;
+import com.dev.devjava.dto.usuario.UsuarioResponseDTO;
 import com.dev.devjava.model.Usuario;
 import com.dev.devjava.repository.UsuarioRepository;
-import lombok.var;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
-import java.util.UUID;
+import java.net.URI;
+import java.util.List;
+
 
 @RestController
 @RequestMapping("api/cadastro/usuario")
@@ -21,15 +22,26 @@ public class UsuarioController {
     @Autowired
     UsuarioRepository usuarioRepository;
 
-    UsuarioMapper mapper;
+    @Autowired
+    private UsuarioMapper usuarioMapper;
+
+    @GetMapping
+    public ResponseEntity<List<UsuarioResponseDTO>> listarUsuarios() {
+        var lista = usuarioMapper.obterUsuarios(usuarioRepository.findAll());
+        return ResponseEntity.ok().body(lista);
+    }
+
 
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public Usuario registrarUsuario(@RequestBody UsuarioDtoRequest usuario){
-        //refatorar o mapper está eretornando null
-        //mapper.usuarioDtoToUsuario(usuario);
-        var us = usuario;
+    public ResponseEntity<UsuarioResponseDTO> registrarUsuario(@RequestBody UsuarioRequestDTO usuarioRequestDTO) {
+        try {
+            Usuario response = usuarioRepository.save(usuarioMapper.converterParaUsuario(usuarioRequestDTO));
+            URI uri = URI.create(String.format("/api/cadastro/usuario/%s", response.getId().toString()));
+            return ResponseEntity.created(uri).build();
+        } catch (Exception exception) {
+            return ResponseEntity.badRequest().build();
+        }
 
-        Usuario request = usuarioRepository.save(new Usuario(UUID.randomUUID(),us.getNome(),us.getApelido()));
-        return  request;
+
     }
 }

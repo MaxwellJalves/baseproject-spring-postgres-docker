@@ -3,6 +3,7 @@ package com.dev.devjava.model;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.UUID;
 
 @Data
@@ -17,10 +18,14 @@ public class Publicacao {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
+    private String detalhes;
+
+    private Categoria categoria;
+
+    private Date data;
 
     @ManyToOne
     @JoinColumn(name = "usuario_uuid")
     private Usuario usuario;
 
-    private  String detalhes;
 }

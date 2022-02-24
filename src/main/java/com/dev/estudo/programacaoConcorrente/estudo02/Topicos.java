@@ -6,9 +6,9 @@ public enum Topicos {
     VALORES("BOLSA DE VALORES"),
     NOTICIAS_QUENTES("BOMBA DO MOMENTO");
 
-    private  String nome;
+    private String nome;
 
-     Topicos(String nome){
+    Topicos(String nome) {
         this.nome = nome;
     }
 

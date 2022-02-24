@@ -3,7 +3,7 @@ package com.dev.estudo.patterns.observer;
 import java.util.Observable;
 import java.util.Observer;
 
-public class CarroDaPolicia implements Observer,Carro {
+public class CarroDaPolicia implements Observer, Carro {
     @Override
     public void frente() {
         System.out.println("VIATURA DA POLICIA : PEGA ESSE FELAAAA!  em frente");
@@ -25,13 +25,12 @@ public class CarroDaPolicia implements Observer,Carro {
     }
 
 
-
     @Override
     public void update(Observable param1, Object param2) {
         CarroRoubado roubado = (CarroRoubado) param1;
         String action = String.valueOf(param2);
 
-        switch (action){
+        switch (action) {
             case "frente":
                 this.frente();
                 break;

@@ -6,12 +6,15 @@
 
 > O Ideal seria após a subida do banco de dados checar se os dados informados no docker compose está correto, e uma simples tentativa de conexão utilizando o pgadmin ou dbeaver poe exemplo pode garantir que ao subir e persistir no banco não irá ocorrer nenhuma problema inespedo.
 
-2. Estando tudo ok com a imagem do banco de dados e as credenciais de acesso é hora de confirmar os dados informados no properties.
+2. Estando tudo ok com a imagem do banco de dados e as credenciais de acesso é hora de confirmar os dados informados no
+   properties.
 
 3. Se os passos anteriores obteverem sucesso é só começar a implementar conforme demanda.
 
 4. Adicionado imagem do Mysql ao repositorio:
+
 -  > docker-compose -f compose-mysql.yml up
+
 ## Documentação - links uteis.
 
 - https://hub.docker.com/_/postgres
@@ -19,9 +22,10 @@
 - https://docs.docker.com/engine/reference/run/
 - https://stack.desenvolvedor.expert/appendix/docker/basecode.html
 - https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html#application-properties.data.spring.jpa.database-platform
--https://mysqlconnector.net/connection-options/
->Referencia XSD pom.xml
--https://maven.apache.org/ref/2.2.1/maven-model/maven.html#class_build
+  -https://mysqlconnector.net/connection-options/
+
+> Referencia XSD pom.xml -https://maven.apache.org/ref/2.2.1/maven-model/maven.html#class_build
+
 ## Leitura
 
 - https://medium.com/equals-lab/15-boas-pr%C3%A1ticas-para-desenvolvimento-de-aplica%C3%A7%C3%B5es-com-spring-boot-953e0ff2e24f
@@ -32,12 +36,11 @@
 
 ## Extensão VSCode
 
-- Extension Pack for Java
-  v0.21.0
-
+- Extension Pack for Java v0.21.0
 
 > Api de Teste
-> 
+>
+
 ```
 POST:
 /api/cadastro/usuario
