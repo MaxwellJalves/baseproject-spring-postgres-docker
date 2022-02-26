@@ -38,60 +38,18 @@
 
 - Extension Pack for Java v0.21.0
 
-> Api de Teste
->
-
-```
-POST:
-/api/cadastro/usuario
- {
-"nome": "JOAO GOMES",
-"apelido": "JOAO"
-}
-
-```
-
-```
-POST:  PUBLICAR
-/api/publicacoes
-
-{
-    "id": "1b657106-07d7-4871-9b99-addc1780674b",
-    "detalhes": "informar detalhes da publicacao",
-    "usuario": {
-        "uuid": "ee18bd11-fd81-4f67-8395-7d17ff92971b"
-    }
-}
-
-```
-
-```
-GET:  OBTER PUBLICACÕES
-/api/publicacoes
-```
-
 Pendencias:
 
 - [x] Criar DTO para as Request e Response [USUARIO]
 - [x] Adicionar o MAPSTRUCT no projeto.
 - [ ] Criar paginação das publicações;
 - [ ] Configurar o Cross para permitir comunicação com o NEXT
+- [x] Adicionado o Swagger-ui ao projeto
 
 
->Exemplo de post de publicações
+## Segundo passo disponibilizar uma api simples deixando a documentação disponivel utilizando o swagger
 
-POST: PUBLICACAO
-
-[
-    {
-    "id": "c7678848-bb2c-45e6-888b-5314c459733c",
-    "detalhes": "Publicacao Teste para obter o json",
-    "categoria": "TI",
-    "data": "2022-02-24T21:57:36.351+00:00",
-        "usuario": {
-        "id": "06e2cc06-2ec2-4a7f-a98c-1621f62b4acc",
-        "nome": "TESTE",
-        "apelido": "development"
-        }
-    }
-]
+>Documentação Spring doc
+> https://springdoc.org/
+>![img.png](img.png)
+> Removido o Spring security do pom nesse primeiro momento ;
