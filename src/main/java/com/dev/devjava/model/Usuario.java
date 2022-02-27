@@ -26,4 +26,9 @@ public class Usuario {
     private String apelido;
 
 
+    @ManyToOne
+    @JoinColumn(name = "publicacao_id")
+    private Publicacao publicacao;
+
+
 }

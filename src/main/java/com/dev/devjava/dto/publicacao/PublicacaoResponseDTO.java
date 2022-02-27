@@ -1,7 +1,6 @@
 package com.dev.devjava.dto.publicacao;
 
 import com.dev.devjava.model.Categoria;
-import com.dev.devjava.model.Usuario;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

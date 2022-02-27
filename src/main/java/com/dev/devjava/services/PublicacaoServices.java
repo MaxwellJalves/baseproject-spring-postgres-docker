@@ -3,6 +3,7 @@ package com.dev.devjava.services;
 import com.dev.devjava.dto.mappers.PublicacaoMapper;
 import com.dev.devjava.dto.publicacao.PublicacaoRequestDTO;
 import com.dev.devjava.dto.publicacao.PublicacaoResponseDTO;
+import com.dev.devjava.exception.PublicacaoExceptionBadRequest;
 import com.dev.devjava.model.Publicacao;
 import com.dev.devjava.repository.PublicacaoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,13 +28,9 @@ public class PublicacaoServices {
     }
 
     public PublicacaoResponseDTO save(PublicacaoRequestDTO publicacao) {
-        var publicacaoResponse = publicacaoRepository.save(publicacaoMapper.converterEmPublicacao(publicacao));
-        try{
-            return publicacaoMapper.converterEmPublicacaoResponseDTO(publicacaoResponse);
-        }catch(Exception ex){
-            ex.printStackTrace();
-            return null;
-        }
+
+        Optional<Publicacao> publicacaoResponse = Optional.of(publicacaoRepository.save(publicacaoMapper.converterEmPublicacao(publicacao)));
+        return publicacaoMapper.converterEmPublicacaoResponseDTO(publicacaoResponse.orElseThrow(() -> new PublicacaoExceptionBadRequest("Erro ao Criar publicação")));
     }
 
     public Publicacao obterPublicacao(String id) {

@@ -19,13 +19,14 @@ public class Publicacao {
     private UUID id;
 
     private String detalhes;
+
     @Enumerated(EnumType.STRING)
     private Categoria categoria;
 
     private Date data;
 
-    @ManyToOne
-    @JoinColumn(name = "usuario_uuid")
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "usuario_id")
     private Usuario usuario;
 
 }
