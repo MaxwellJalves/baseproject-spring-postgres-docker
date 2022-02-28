@@ -1,34 +1,14 @@
 package com.dev.devjava.model;
 
-import lombok.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
-import javax.persistence.*;
-import javax.validation.constraints.NotNull;
-import java.util.UUID;
-
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-@Builder
 @Entity
-@EqualsAndHashCode
 public class Usuario {
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id;
-
-    @Column(name = "nome", nullable = false)
-    @NotNull(message = "Nome do usuário não pode ser nulo")
+    private Long id;
     private String nome;
-
-    @Column(name = "apelido", length = 50)
-    private String apelido;
-
-
-    @ManyToOne
-    @JoinColumn(name = "publicacao_id")
-    private Publicacao publicacao;
-
-
 }
