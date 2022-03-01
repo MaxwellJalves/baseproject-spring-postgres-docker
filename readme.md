@@ -1,55 +1,81 @@
-## Projeto Criado para centralizar as configurações básicas utilizadas para iniciar um projeto Spring+Banco de Dados Postgres + Imagem Docker
+# Annotations JPA
 
-1. Antes de realizar o start da aplicação inicei a imagem do banco de dados através do comando.
+@Entity – especifica que a classe representa uma entidade no banco de dados. O estado da classe anotada com essa annotation é gerenciado pelo contexto de persistência subjacente.
 
-> docker-compose up ou docker-compose up -d
+@Basic – mapeia um tipo de atributo básico para uma coluna de uma tabela no banco de dados.
 
-> O Ideal seria após a subida do banco de dados checar se os dados informados no docker compose está correto, e uma simples tentativa de conexão utilizando o pgadmin ou dbeaver poe exemplo pode garantir que ao subir e persistir no banco não irá ocorrer nenhuma problema inespedo.
+@Cacheable – especifica se uma entidade deve ser armazenada no cache de segundo nível.
 
-2. Estando tudo ok com a imagem do banco de dados e as credenciais de acesso é hora de confirmar os dados informados no
-   properties.
+@Table – especifica a tabela da entidade anotada.
 
-3. Se os passos anteriores obteverem sucesso é só começar a implementar conforme demanda.
+@Column – especifica o mapeamento entre um atributo básico e a coluna da tabela de banco de dados.
 
-4. Adicionado imagem do Mysql ao repositorio:
+@Id – especifica o identificador da entidade. Qualquer entidade precisa ter um atributo identificador, este que é usado ao carregar a entidade em um determinado contexto de persistência.
 
--  > docker-compose -f compose-mysql.yml up
+@GeneratedValue – especifica que o valor do identificador de entidade é gerado automaticamente utilizando a coluna de identidade, uma sequência de banco de dados ou um gerador de tabelas.
 
-## Documentação - links uteis.
+O Hibernate (uma implementação da JPA) suporta o mapeamento @GeneratedValue mesmo para os identificadores de UUID.
 
-- https://hub.docker.com/_/postgres
-- https://docs.docker.com/engine/reference/commandline/image_ls/
-- https://docs.docker.com/engine/reference/run/
-- https://stack.desenvolvedor.expert/appendix/docker/basecode.html
-- https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html#application-properties.data.spring.jpa.database-platform
-  -https://mysqlconnector.net/connection-options/
+@Transient – especifica que um determinado atributo de entidade não deve ser persistido. Quase a mesma ideia da annotation do Spring Data.
 
-> Referencia XSD pom.xml -https://maven.apache.org/ref/2.2.1/maven-model/maven.html#class_build
+@Lob – especifica que o atributo atualmente anotado representa um tipo de objeto grande.
 
-## Leitura
+@OneToOne – especifica um relacionamento de banco de dados um para um.
 
-- https://medium.com/equals-lab/15-boas-pr%C3%A1ticas-para-desenvolvimento-de-aplica%C3%A7%C3%B5es-com-spring-boot-953e0ff2e24f
+@ManyToOne – especifica um relacionamento de banco de dados muitos para um.
 
-## Música para descontrair :D
+@OneToMany – especifica um relacionamento de banco de dados um para muitos.
 
-- https://www.youtube.com/watch?v=zpzoG5KGaHg
+@ManyToMany – especifica um relacionamento de banco de dados muitos para muitos.
 
-## Extensão VSCode
+@JoinColumn – especifica a coluna FOREIGN KEY utilizada ao ingressar em uma associação de entidades ou em uma coleção incorporável.
 
-- Extension Pack for Java v0.21.0
+@JoinTable – especifica a tabela de links entre duas outras tabelas de banco de dados.
 
-Pendencias:
+@MapsId – especifica que o identificador de identidade é mapeado pelo @ManyToOne atualmente anotado ou @OneToOne associado.
 
-- [x] Criar DTO para as Request e Response [USUARIO]
-- [x] Adicionar o MAPSTRUCT no projeto.
-- [ ] Criar paginação das publicações;
-- [ ] Configurar o Cross para permitir comunicação com o NEXT
-- [x] Adicionado o Swagger-ui ao projeto
+@ElementCollection – especifica uma coleção de tipos básicos ou incorporáveis.
 
+@Embeddable – especifica tipos incorporáveis. Assim como os tipos básicos, os tipos incorporáveis não têm identidade, sendo gerenciados por sua entidade proprietária.
 
-## Segundo passo disponibilizar uma api simples deixando a documentação disponivel utilizando o swagger
+@Embedded – especifica que um determinado atributo de entidade representa um tipo incorporável.
 
->Documentação Spring doc
-> https://springdoc.org/
->![img.png](img.png)
-> Removido o Spring security do pom nesse primeiro momento ;
+@Enumerated – especifica que um atributo de entidade representa um tipo enumerado.
+
+@JoinColumns – utilizada para agrupar várias anotações @JoinColumn que são utilizadas ao mapear a associação de entidades ou uma coleção incorporável utilizando um identificador composto.
+
+@NamedQuery – especifica uma consulta JPQL que pode ser recuperada posteriormente por seu nome.
+
+@OrderBy – especifica os atributos da entidade utilizados para classificação ao buscar a coleção atualmente anotada.
+
+@PersistenceContext – especifica o EntityManager que precisa ser injetado como dependência.
+
+@Temporal – especifica o tipo de tempo do atributo de entidade java.util.Date ou java.util.Calendar.
+
+@Access – especifica o tipo de acesso da classe de entidade associada, superclasse associada ou atributo de classe e entidade incorporável.
+
+@Inheritance – especifica a estratégia de herança de uma determinada hierarquia de classes de entidade.
+
+@ForeignKey – especifica a chave estrangeira associada ao mapeamento @JoinColumn.
+
+@Mapkey – especifica a chave de uma associação java.util.Map para o qual o tipo de chave é a chave primária ou atributo da entidade que representa o valor do mapa.
+
+@NamedQueries – utilizada para agrupar várias anotações @NamedQuery.
+
+@PersistenceUnit – especifica o EntityManagerFactory que precisa ser injetado como dependência.
+
+@PersistenceUnits – utilizada para agrupar várias anotações @PersistenceUnit.
+
+@PostLoad – especifica um método de retorno de chamada que é acionado depois que uma entidade é carregada.
+
+@PostPersist – especifica um método de retorno de chamada que é acionado após uma entidade ser persistida.
+
+@PostRemove – especifica um método de retorno de chamada que é acionado após uma entidade ser removida.
+
+@PostUpdate – especifica um método de retorno de chamada que é acionado após uma entidade ser atualizada.
+
+@PrePersist – especifica um método de retorno de chamada que é acionado antes que uma entidade seja persistida.
+
+@PreRemove –  especifica um método de retorno de chamada que é acionado antes que uma entidade seja removida.
+
+@PreUpdate –  especifica um método de retorno de chamada que é acionado antes que uma entidade seja atualizada.
