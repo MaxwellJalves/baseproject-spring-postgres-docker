@@ -1,6 +1,7 @@
 package com.dev.devjava.controller;
 
 import com.dev.devjava.repository.PublicacaoRepository;
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,9 @@ public class PublicacaoController {
     @ApiResponses(
             @ApiResponse(responseCode = "204 No Content")
     )
-    public ResponseEntity obterUsuario(@PathVariable Long id) {
+    @Operation(description = "Obter Publicação por id",
+               summary = "Obter Publicacao")
+    public ResponseEntity obterPublicacaoPorId(@PathVariable Long id) {
 
         var validacao = publicacaoRepository.findById(id);
         return validacao.isPresent() ?
@@ -31,7 +34,7 @@ public class PublicacaoController {
     }
 
     @GetMapping
-    public ResponseEntity obterUsuario() {
+    public ResponseEntity obterPublicacoes() {
         var validacao = publicacaoRepository.findAll();
         return ResponseEntity.ok().body(validacao);
     }

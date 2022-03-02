@@ -18,7 +18,7 @@ public class UsuarioController {
     @ApiResponses(
             @ApiResponse(responseCode = "204 No Content")
     )
-    public ResponseEntity obterUsuario(@PathVariable Long id) {
+    public ResponseEntity obterUsuarioPorID(@PathVariable Long id) {
 
         var validacao = usuarioRepository.findById(id);
         return validacao.isPresent() ?
@@ -28,7 +28,7 @@ public class UsuarioController {
     }
 
     @GetMapping
-    public ResponseEntity obterUsuario() {
+    public ResponseEntity obterUsuarios() {
         var validacao = usuarioRepository.findAll();
         return ResponseEntity.ok().body(validacao);
     }
