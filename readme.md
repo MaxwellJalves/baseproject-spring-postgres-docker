@@ -79,3 +79,8 @@ O Hibernate (uma implementação da JPA) suporta o mapeamento @GeneratedValue me
 @PreRemove –  especifica um método de retorno de chamada que é acionado antes que uma entidade seja removida.
 
 @PreUpdate –  especifica um método de retorno de chamada que é acionado antes que uma entidade seja atualizada.
+
+
+#Documentação
+
+https://docs.spring.io/spring-boot/docs/1.1.0.M1/reference/html/howto-database-initialization.html
