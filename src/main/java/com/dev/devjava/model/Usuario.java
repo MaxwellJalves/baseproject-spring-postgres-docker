@@ -1,16 +1,14 @@
 package com.dev.devjava.model;
 
-import lombok.*;
+import lombok.Data;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "usuario")
 @Data
-public class Usuario {
+public class Usuario implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -20,11 +18,13 @@ public class Usuario {
 
     public Usuario(){}
 
-    public Usuario(Long id,String nome){
+    public Usuario(Long id,String nome,Local localId){
         this.id = id;
         this.nome = nome;
+        this.local = localId;
     }
-    public Usuario(String nome){
-        this.nome = nome;
-    }
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id.local")
+    private Local local;
 }
